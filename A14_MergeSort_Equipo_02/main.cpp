@@ -1,7 +1,8 @@
 //Juan Manuel González - A00572003
 //Daniel Gutierrez Gomez - A01068056    
 //Julio Perez A0XXXXXXX
-//Last change 25/08/2023
+// Creación 24/08/2021
+//Last change 26/08/2023
 //TC2038
 //Merge sort algorithm
 
@@ -102,5 +103,4 @@ int main(){
 	return 0;
 }
 
-// This code is contributed by Mayank Tyagi
-// This code was revised by Joshua Estes
+// Complejidad del algoritmo O(n log n)
