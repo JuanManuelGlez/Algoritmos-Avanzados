@@ -11,7 +11,6 @@
 
 #include <iostream>
 #include <map>
-#include "coin_change_dp.h"
 
 /*
     Este codigo tiene una complejidad de O(n log m), debido a que el primer ciclo 
