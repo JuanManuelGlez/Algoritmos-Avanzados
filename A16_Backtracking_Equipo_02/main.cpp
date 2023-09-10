@@ -13,7 +13,8 @@ int main(int argc, char *argv[]){
 
     // Crear una matriz (vector de vectores) de tamaño n x m
     std::vector<std::vector<int>> matriz(n, std::vector<int>(m));
-    std::vector<std::vector<int>> ans(n, std::vector<int>(m, 0));
+    std::vector<std::vector<int>> ansBackTrack(n, std::vector<int>(m, 0));
+    std::vector<std::vector<int>> ansBranchAndBound(n, std::vector<int>(m, 0));
 
     // Leer los valores de la matriz
     std::cout << "Introduce los valores de la matriz:" << std::endl;
@@ -22,12 +23,22 @@ int main(int argc, char *argv[]){
             std::cin >> matriz[i][j];
         }
     }
-    bool hasAnswer = branchAndBound(matriz, 0, 0, ans);
+
+    bool hasAnswerBack = backTracking(matriz, 0, 0, ansBackTrack);
+    bool hasAnswerBranch = branchAndBound(matriz, 0, 0, ansBranchAndBound);
     // Opcional: Mostrar la matriz leída
     std::cout << "\nMatriz BackTracking:" << std::endl;
     for (int i = 0; i < n; ++i){
         for (int j = 0; j < m; ++j){
-            std::cout << ans[i][j] << "\t";
+            std::cout << ansBackTrack[i][j] << "\t";
+        }
+        std::cout << std::endl;
+    }
+
+    std::cout << "\nMatriz BranchAndBound:" << std::endl;
+    for (int i = 0; i < n; ++i){
+        for (int j = 0; j < m; ++j){
+            std::cout << ansBranchAndBound[i][j] << "\t";
         }
         std::cout << std::endl;
     }
