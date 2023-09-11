@@ -27,20 +27,29 @@ int main(int argc, char *argv[]){
     bool hasAnswerBack = backTracking(matriz, 0, 0, ansBackTrack);
     bool hasAnswerBranch = branchAndBound(matriz, 0, 0, ansBranchAndBound);
     // Opcional: Mostrar la matriz leída
-    std::cout << "\nMatriz BackTracking:" << std::endl;
-    for (int i = 0; i < n; ++i){
-        for (int j = 0; j < m; ++j){
-            std::cout << ansBackTrack[i][j] << "\t";
+    if(hasAnswerBack) {
+        std::cout << "\nMatriz BackTracking:" << std::endl;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j)
+            {
+                std::cout << ansBackTrack[i][j] << "\t";
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
     }
-
-    std::cout << "\nMatriz BranchAndBound:" << std::endl;
-    for (int i = 0; i < n; ++i){
-        for (int j = 0; j < m; ++j){
-            std::cout << ansBranchAndBound[i][j] << "\t";
+    if(hasAnswerBranch) {
+        std::cout << "\nMatriz BranchAndBound:" << std::endl;
+        for (int i = 0; i < n; ++i)
+        {
+            for (int j = 0; j < m; ++j)
+            {
+                std::cout << ansBranchAndBound[i][j] << "\t";
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
+    }
+    else{
+        std::cout << "\n No hay respuesta" << std::endl;
     }
     return 0;
 }

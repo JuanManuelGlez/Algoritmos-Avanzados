@@ -1,13 +1,13 @@
 /**  Programa que implementa técnica recursiva de
  * backtracking, en la que se van explorando diferentes
  * caminos para llegar a la meta, si se encuentran cami-
- * nos nos validos, se regresa (backtrack) y se deja en 
+ * nos nos validos, se regresa (backtrack) y se deja en
  * el estado anterior a la matriz en este caso del llenado
- * Daniel Gutiérrez Gómez A01068056
- * Juan Manuel González Ascencio A00572003
- * Julio César Pérez Rodríguez A01705763
+ * @author Daniel Gutiérrez Gómez A01068056
+ * @author Juan Manuel González Ascencio A00572003
+ * @author Julio César Pérez Rodríguez A01705763
  * Creación 06/09/23, Modificación 08/09/23
-*/
+ */
 
 #include <vector>
 using namespace std;
