@@ -1,6 +1,7 @@
 #include "backTrackLab.h"
 #include "branchAndBound.h"
 #include <iostream>
+#include <utility>
 
 int main(int argc, char *argv[]){
     int n, m;
@@ -23,9 +24,9 @@ int main(int argc, char *argv[]){
             std::cin >> matriz[i][j];
         }
     }
-
+    std::pair<int, int>temp;
     bool hasAnswerBack = backTracking(matriz, 0, 0, ansBackTrack);
-    bool hasAnswerBranch = branchAndBound(matriz, 0, 0, ansBranchAndBound);
+    bool hasAnswerBranch = dfs(matriz, 0, 0, ansBranchAndBound);
     // Opcional: Mostrar la matriz leída
     if(hasAnswerBack) {
         std::cout << "\nMatriz BackTracking:" << std::endl;
