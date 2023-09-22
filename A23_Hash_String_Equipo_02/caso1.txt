@@ -1,0 +1,5 @@
+esto es una prueba
+del algoritmo de
+hash string
+no se que mas
+poner en este archivo
