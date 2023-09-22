@@ -14,12 +14,14 @@ using namespace std;
 
 void generarSufijos(string palabra){
     vector<string> sufijos;
+    //Generar lista de sufijos.
     for(int i = 0; i < palabra.length(); i++){
         sufijos.push_back(palabra.substr(i, palabra.length()));
     }
+    //Ordenamiento de la lista de sufijos de manera alfabética.
     sort(sufijos.begin(), sufijos.end());
 
-
+    //Imprimir lista ordenada de sufijos con posición inicial.
     for(int i = 0; i < sufijos.size(); i++){
         cout << i << " "<< palabra.length() - sufijos[i].length() << ": "<<sufijos[i] << endl;
     }
