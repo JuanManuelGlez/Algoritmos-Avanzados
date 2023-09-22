@@ -18,7 +18,6 @@ void generarSufijos(string palabra){
     //Generar lista de sufijos.
     for(int i = 0; i < palabra.length(); i++){
         sufijos.push_back(palabra.substr(i, palabra.length()));
-        cout<<i<<endl;
     }
     //Ordenamiento de la lista de sufijos de manera alfabética.
     sort(sufijos.begin(), sufijos.end());
