@@ -77,6 +77,6 @@ int main(int argc, char *argv[]) {
         }
         cout << "En archivo: " << files[i].first + ".txt";
         cout << " El substring común más largo empieza en: " << start;
-        cout << " termina en: " << end << endl;
+        cout << " termina en: " << end + 1 << endl;
     }
 }
