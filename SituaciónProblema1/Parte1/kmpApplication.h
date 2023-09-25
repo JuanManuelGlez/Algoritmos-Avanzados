@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -49,12 +50,14 @@ void makeLpsTable(string mcode, vector<int> &lpsTable){
  * sino, sería O(x*y(n*m))
  */
 void kmpApplication(vector<string> transmissions,
-                    vector<vector<int>> lpsTables, vector<string> target, int posFile) {
+                    vector<vector<int>> lpsTables, vector<string> target, int posFile,
+                    vector<string> mcodeFiles) {
     for (int x = 0; x < transmissions.size(); x++){ // Iterar dos veces para cada transmssion
         for (int y = 0; y < target.size(); y++){ // Iterar tres veces para cada mcode
             // Apuntadores para hacer comparaciones con algoritmo KMP
             int i = 0;
             int j = 0;
+            int k = 0;
             // String temporal de la transmisión
             string temp = transmissions[x];
             while (i < temp.length()){
@@ -66,12 +69,14 @@ void kmpApplication(vector<string> transmissions,
                 }
                 // Comparación si j llegó a la longitud de la palabra de mcode
                 // setear j a 0, porque puede haber más apariciones
-                if (j == target[y].length()){
+                if (j == target[y].length()) {
+                    k++;
                     j = 0;
                     cout << "True en la posición inicial: "
                          << (i - target[y].length()) + 1
-                         << ", y final: " << i + 1;
-                    cout << " En el archivo de transmisión: " << posFile << x + 1;
+                         << " y final: " << i + 1;
+                    cout << " en el archivo de transmission" << posFile << x + 1 << ".txt";
+                    cout << " en archivo: " << mcodeFiles[y].substr(10);
                     cout << endl;
                 }
                 // Si la i todavía no llega al final del string y no hay match de caracteres
@@ -85,6 +90,10 @@ void kmpApplication(vector<string> transmissions,
                         i++;
                     }
                 }
+            }
+            if (k < 1) {
+                cout << "False el archivo transmission" << posFile << x + 1 << ".txt";
+                cout << " no contiene el código contenido en el archivo: " << mcodeFiles[y].substr(10) << endl;
             }
         }
     }

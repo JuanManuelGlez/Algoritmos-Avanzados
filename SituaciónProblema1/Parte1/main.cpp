@@ -113,12 +113,12 @@ int main(int argc, char *argv[]){
                 // Si no es palíndromo, voltear string
                 // porque puede existir al revés el string
                 // en transmission
-                if (!isPalindrome(0, temp.size() - 1, temp)) {
-                    reverse(temp.begin(), temp.end());
-                    mcodes.push_back(temp);
-                    makeLpsTable(temp, lps);
-                    lpsTables.push_back(lps);
-                }
+                // if (!isPalindrome(0, temp.size() - 1, temp)) {
+                //     reverse(temp.begin(), temp.end());
+                //     mcodes.push_back(temp);
+                //     makeLpsTable(temp, lps);
+                //     lpsTables.push_back(lps);
+                // }
                 mCode.close();
             }
             else {
@@ -130,8 +130,8 @@ int main(int argc, char *argv[]){
         // Aplicar KMP con:
         // 2 strings de transmisión
         // 3 tablas LPS
-        // 3 patrones mcode 
-        kmpApplication(transmissions, lpsTables, mcodes, i);
+        // 3 patrones mcode
+        kmpApplication(transmissions, lpsTables, mcodes, i, firstMcode);
         cout << endl;
     }
 }
