@@ -68,10 +68,10 @@ void kmpApplication(vector<string> transmissions,
                 // setear j a 0, porque puede haber más apariciones
                 if (j == target[y].length()){
                     j = 0;
-                    cout << "Se encontró el string: " << target[y] << " en la posición inicial: "
+                    cout << "True en la posición inicial: "
                          << (i - target[y].length()) + 1
-                         << ", y final: " << i + 1 << endl;
-                    cout << "En el archivo de transmisión: " << posFile << x + 1;
+                         << ", y final: " << i + 1;
+                    cout << " En el archivo de transmisión: " << posFile << x + 1;
                     cout << endl;
                 }
                 // Si la i todavía no llega al final del string y no hay match de caracteres
