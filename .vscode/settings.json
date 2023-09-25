@@ -75,6 +75,7 @@
     "iomanip": "cpp",
     "fstream": "cpp",
     "stack": "cpp",
-    "filesystem": "cpp"
+    "filesystem": "cpp",
+    "utility": "cpp"
 }
 }
