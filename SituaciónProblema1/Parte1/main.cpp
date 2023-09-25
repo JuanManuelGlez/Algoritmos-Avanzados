@@ -65,46 +65,73 @@ void makePairsVectorFiles(vector<string> mcodes, vector<string> transcodes){
 }
 
 int main(int argc, char *argv[]){
-  string mcodeTemp = "../mcodes/mcode";
-  string transTemp = "../transmission/transmission";
-  vector<string> mcodeFiles;
-  vector<string> transFiles;
+    // Inicialización de variables globales dentro de main
+    // archivos a leer, y textos con extensión de files
+    string mcodeTemp = "../mcodes/mcode";
+    string transTemp = "../transmission/transmission";
+    vector<string> mcodeFiles;
+    vector<string> transFiles;
 
-  createStringsToRead(mcodeFiles, mcodeTemp);
-  createStringsToReadTransmission(transFiles, transTemp);
-  makePairsVectorFiles(mcodeFiles, transFiles);
-  for (int i = 0; i < files.size(); i++){
-    vector<string> firstMcode = files[i].first;
-    vector<string> firstTrans = files[i].second;
-    vector<vector<int>> lpsTables;
-    vector<string> transmissions;
-    vector<string> mcodes;
-    for (int j = 0; j < firstMcode.size(); j++){
-      ifstream mCode(firstMcode[j]);
-      if (mCode.is_open()){
-        string temp;
-        while (mCode.good()){
-          mCode >> temp;
-        }
-        mcodes.push_back(temp);
-        vector<int> lps(temp.size());
-        makeLpsTable(temp, lps);
-        lpsTables.push_back(lps);
+    // Creación de los strings para leer archivos
+    createStringsToRead(mcodeFiles, mcodeTemp);
+    createStringsToReadTransmission(transFiles, transTemp);
 
-        if (!isPalindrome(0, temp.size() - 1, temp)) {
-          reverse(temp.begin(), temp.end());
-          mcodes.push_back(temp);
-          makeLpsTable(temp, lps);
-          lpsTables.push_back(lps);
+    // Realizar vector de par de vectores para después hacer lectura
+    // de la relación
+    makePairsVectorFiles(mcodeFiles, transFiles);
+
+    // Por cada par de vectores, abrir mcode, para generar LPSTable
+    // a files.first (mcode)
+    for (int i = 0; i < files.size(); i++){
+        // Mcodes
+        vector<string> firstMcode = files[i].first;
+        // Transmissions
+        vector<string> firstTrans = files[i].second;
+        // Tablas LPS son 3 vectores para cada iteración
+        vector<vector<int>> lpsTables;
+        // Transmisiones, son dos por cada par de vectores
+        vector<string> transmissions;
+        // mcodes, son tres por cada par de vectores
+        vector<string> mcodes;
+        // Para cada vector dentro de Mcode
+        // aplicar LPS, guardar en vector temporal de tablas
+        // y aplicar KMP a cada transmission con cada LPS y cada
+        // mcode string
+        for (int j = 0; j < firstMcode.size(); j++){
+            ifstream mCode(firstMcode[j]);
+            if (mCode.is_open()){
+                string temp;
+                while (mCode.good()){
+                    mCode >> temp;
+                }
+                // Generar tabla lps
+                // con string leído del mcodeX.txt
+                mcodes.push_back(temp);
+                vector<int> lps(temp.size());
+                makeLpsTable(temp, lps);
+                lpsTables.push_back(lps);
+                // Si no es palíndromo, voltear string
+                // porque puede existir al revés el string
+                // en transmission
+                if (!isPalindrome(0, temp.size() - 1, temp)) {
+                    reverse(temp.begin(), temp.end());
+                    mcodes.push_back(temp);
+                    makeLpsTable(temp, lps);
+                    lpsTables.push_back(lps);
+                }
+                mCode.close();
+            }
+            else {
+                cerr << "Unable to open file." << endl;
+            }
         }
-        mCode.close();
-      }
-      else {
-        cerr << "Unable to open file." << endl;
-      }
+        // Leer archivo de transmisión una vez tenidas las tablas LPS
+        transmissions = leerArchivo(firstTrans);
+        // Aplicar KMP con:
+        // 2 strings de transmisión
+        // 3 tablas LPS
+        // 3 patrones mcode 
+        kmpApplication(transmissions, lpsTables, mcodes, i);
+        cout << endl;
     }
-    transmissions = leerArchivo(firstTrans);
-    kmpApplication(transmissions, lpsTables, mcodes, i);
-    cout << endl;
-  }
 }
