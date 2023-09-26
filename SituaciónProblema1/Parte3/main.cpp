@@ -5,54 +5,22 @@
 #include <algorithm>
 #include <utility>
 #include "../readFiles.h"
+#include "compareSub.h"
+#include "leerArchivo.h"
 
 using namespace std;
 
+// Variable global para guardar los files en pares de strings
+// para realizar la lectura
 vector<pair<string, string>> files;
 
-vector<pair<int, int>> longestCommonSubstring(vector<vector<int>> tabulator,
-                                              string subs1, string subs2) {
-    vector<pair<int, int>> indices;
-    int maxInt = 0;
-    int endIndex = 0;
-    vector<int> lengthSubs(max(subs1.size(), subs2.size()));
-    for(int row = 0; row < tabulator.size(); row ++) {
-        for(int col = 0; col < tabulator[0].size(); col++) {
-            if(col == 0 || row == 0){
-                tabulator[row][col] = 0;
-            }
-            else {
-                if (subs1[col - 1] == subs2[row - 1]) {
-                    tabulator[row][col] = max(tabulator[row - 1][col - 1] + 1, tabulator[row][col - 1] + 1);
-                } else {
-                    tabulator[row][col] = 0;
-                }
-                if(maxInt < tabulator[row][col]) {
-                    maxInt = tabulator[row][col];
-                    endIndex = col - 1;
-                }
-            }
-        }
-        if (maxInt > 0){
-            int startIndex = (endIndex - maxInt + 1) + 1;
-            indices.emplace_back(startIndex, endIndex + 1);
-            maxInt = 0;
-        }
-    }
-    return indices;
-}
+// Variable global para concatenar string de files de directorio
+string trans = "../transmission/";
 
-void leerArchivoTrans(string &transmission, string transFile) {
-    ifstream inFile(transFile);
-    string line;
-    while (getline(inFile, line)) {
-        transmission += line;
-    }
-}
+// Variable global de string con nombres de files transmission
+vector<string> transmissions;
 
 int main(int argc, char *argv[]) {
-    string trans = "../transmission/";
-    vector<string> transmissions;
     createStringsToReadTransmission(transmissions, "transmission");
     for(int i = 0; i < transmissions.size(); i+=2) {
         files.emplace_back(transmissions[i], transmissions[i + 1]);
@@ -75,8 +43,8 @@ int main(int argc, char *argv[]) {
                 end = indices[x].second;
             }
         }
-        cout << "En archivo: " << files[i].first + ".txt";
-        cout << " El substring común más largo empieza en: " << start;
+        cout << "En archivo: " << files[i].first;
+        cout << " el substring común más largo empieza en: " << start;
         cout << " termina en: " << end + 1 << endl;
     }
 }
