@@ -1,12 +1,22 @@
+/**
+ * Programa que aplica DP para dos strings de files
+ * de transmisión por cada par, imprime los índices
+ * del primer archivo de transmisión del string
+ * común más grande.
+ * Daniel Gutiérrez Gómez A01068056
+ * Juan Manuel González Ascencio A00572003
+ * Julio César Pérez Rodríguez A01705763
+ * Creación 25/09/23
+ * Modificación 26/09/23
+ */
+
 #include <vector>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <algorithm>
 #include <utility>
-#include "../readFiles.h"
-#include "compareSub.h"
-#include "leerArchivo.h"
+#include "applyDP.h"
 
 using namespace std;
 
@@ -21,30 +31,11 @@ string trans = "../transmission/";
 vector<string> transmissions;
 
 int main(int argc, char *argv[]) {
+    // Generar los archivos para leer
     createStringsToReadTransmission(transmissions, "transmission");
     for(int i = 0; i < transmissions.size(); i+=2) {
         files.emplace_back(transmissions[i], transmissions[i + 1]);
     }
-    // Aplicar comparación de strings para cada par de files leídos
-    for(int i = 0; i < files.size(); i++) {
-        string subs1;
-        string subs2;
-        leerArchivoTrans(subs1, trans + files[i].first);
-        leerArchivoTrans(subs2, trans + files[i].second);
-        vector<vector<int>> tabulator(subs2.size(), vector<int>(subs1.size()));
-        vector<pair<int, int>> indices = longestCommonSubstring(tabulator, subs1, subs2);
-        int diff = 0;
-        int start = 0;
-        int end = 0;
-        for(int x = 0; x < indices.size(); x++){
-            if (diff <= (indices[x].second - indices[x].first)){
-                diff = indices[x].second - indices[x].first;
-                start = indices[x].first;
-                end = indices[x].second;
-            }
-        }
-        cout << "En archivo: " << files[i].first;
-        cout << " el substring común más largo empieza en: " << start;
-        cout << " termina en: " << end + 1 << endl;
-    }
+    // Aplicar DP para cada par de files
+    applyDpToFiles(files, trans);
 }
