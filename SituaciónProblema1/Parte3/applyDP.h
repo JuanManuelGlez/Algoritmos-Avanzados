@@ -1,3 +1,6 @@
+#ifndef APPLYDP_H
+#define APPLYDP_H
+
 #include <vector>
 #include <utility>
 #include <string>
@@ -40,6 +43,11 @@ void applyDpToFiles(vector<pair<string, string>> files,
                 end = indices[x].second;
             }
         }
+        cout << endl;
+        cout << "           Substring             "; 
+        cout << endl;
+        cout << subs1.substr(start - 1, diff);
+        cout << endl;
         cout << "En archivo: " << files[i].first;
         cout << endl;
         cout << "Posicion inicial: " << start;
@@ -47,3 +55,5 @@ void applyDpToFiles(vector<pair<string, string>> files,
         cout << endl;
     }
 }
+
+#endif

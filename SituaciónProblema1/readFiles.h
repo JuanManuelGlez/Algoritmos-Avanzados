@@ -1,3 +1,5 @@
+#ifndef READFILES_H
+#define READFILES_H
 #include <vector>
 #include <string>
 #include <fstream>
@@ -72,3 +74,5 @@ vector<string> leerArchivo(vector<string> transmissions){
     }
     return transmission;
 }
+
+#endif

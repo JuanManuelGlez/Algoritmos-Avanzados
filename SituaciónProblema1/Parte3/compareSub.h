@@ -1,3 +1,6 @@
+#ifndef COMPARESUB_H
+#define COMPARESUB_H
+
 #include <vector>
 #include <iostream>
 #include <string>
@@ -52,3 +55,4 @@ vector<pair<int, int>> longestCommonSubstring(vector<vector<int>> tabulator,
     }
     return indices;
 }
+#endif

@@ -1,3 +1,6 @@
+#ifndef MANACHER_H
+#define MANACHER_H
+
 #include <string>
 #include <vector>
 #include <sstream>
@@ -59,3 +62,5 @@ std::string longestPalindrome(const std::string& s) {
     oss << (center_index - 1 - max_len) / 2 << " " << ((center_index - 1 - max_len) / 2) + max_len;
     return oss.str();
 }
+
+#endif

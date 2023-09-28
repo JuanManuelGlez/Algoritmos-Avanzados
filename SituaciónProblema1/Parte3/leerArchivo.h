@@ -1,3 +1,6 @@
+#ifndef LEERARCHIVO_H
+#define LEERARCHIVO_H
+
 #include <string>
 #include <vector>
 #include <fstream>
@@ -19,3 +22,5 @@ void leerArchivoTrans(string &transmission, string transFile) {
         transmission += line;
     }
 }
+
+#endif

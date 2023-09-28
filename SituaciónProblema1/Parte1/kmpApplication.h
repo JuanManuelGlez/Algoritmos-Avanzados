@@ -1,3 +1,6 @@
+#ifndef KMPAPPLICATION_H
+#define KMPAPPLICATION_H
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -76,7 +79,7 @@ void kmpApplication(vector<string> transmissions,
                          << (i - target[y].length()) + 1
                          << " y final: " << i + 1;
                     cout << " en el archivo de transmission" << posFile << x + 1 << ".txt";
-                    cout << " en archivo: " << mcodeFiles[y].substr(10);
+                    cout << " en archivo: " << mcodeFiles[y].substr(7);
                     cout << endl;
                 }
                 // Si la i todavía no llega al final del string y no hay match de caracteres
@@ -93,7 +96,7 @@ void kmpApplication(vector<string> transmissions,
             }
             if (k < 1) {
                 cout << "(False) El archivo transmission" << posFile << x + 1 << ".txt";
-                cout << " no contiene el codigo contenido en el archivo: " << mcodeFiles[y].substr(10) << endl;
+                cout << " no contiene el codigo contenido en el archivo: " << mcodeFiles[y].substr(7) << endl;
             }
         }
     }
@@ -122,3 +125,5 @@ bool isPalindrome(int left, int right, string mcode){
     }
     return true;
 }
+
+#endif

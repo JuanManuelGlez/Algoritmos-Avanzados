@@ -1,23 +1,5 @@
-/**
- * Parte uno de Situación Problema
- * Programa que sirve para saber si existe
- * una cadena de strings en este caso son
- * archivos de texto llamados "mcodeX.txt"
- * de los cuales, se tiene que saber si se
- * encuentra esa cadena en otro archivo de
- * transmisión "transmissionY.txt". El mapeo
- * que se hizo, es una comparación de que por
- * cada cadena "mcodeX.txt", se debe de hacer la
- * comparación a los dos archivos de "transmissionY.txt"
- * esto, 3 veces ya que hay tres archivos de "mcodeX.txt"
- * al final, sabremos la posición inicial y final
- * dentro del archivo "transmissionY.txt" si es que
- * se encontró la cadena de "mcodeX.txt" en "transmissionY.txt"
- * Daniel Gutiérrez Gómez A01068056
- * Juan Manuel González Ascencio A00572003
- * Julio César Pérez Rodríguez A01705763
- * Creación 21/09/23, Modificación 23/09/23
- */
+#ifndef MAINKMP_H
+#define MAINKMP_H
 
 #include <string>
 #include <vector>
@@ -64,11 +46,11 @@ void makePairsVectorFiles(vector<string> mcodes, vector<string> transcodes){
     }
 }
 
-int main(int argc, char *argv[]){
+void mainKMP() {
     // Inicialización de variables globales dentro de main
     // archivos a leer, y textos con extensión de files
-    string mcodeTemp = "../mcodes/mcode";
-    string transTemp = "../transmission/transmission";
+    string mcodeTemp = "mcodes/mcode";
+    string transTemp = "transmission/transmission";
     vector<string> mcodeFiles;
     vector<string> transFiles;
 
@@ -82,7 +64,7 @@ int main(int argc, char *argv[]){
 
     // Por cada par de vectores, abrir mcode, para generar LPSTable
     // a files.first (mcode)
-    for (int i = 0; i < files.size(); i++){
+    for (int i = 0; i < files.size(); i++) {
         // Mcodes
         vector<string> firstMcode = files[i].first;
         // Transmissions
@@ -97,11 +79,11 @@ int main(int argc, char *argv[]){
         // aplicar LPS, guardar en vector temporal de tablas
         // y aplicar KMP a cada transmission con cada LPS y cada
         // mcode string
-        for (int j = 0; j < firstMcode.size(); j++){
+        for (int j = 0; j < firstMcode.size(); j++) {
             ifstream mCode(firstMcode[j]);
             if (mCode.is_open()){
                 string temp;
-                while (mCode.good()){
+                while (mCode.good()) {
                     mCode >> temp;
                 }
                 // Generar tabla lps
@@ -126,3 +108,4 @@ int main(int argc, char *argv[]){
         cout << endl;
     }
 }
+#endif
