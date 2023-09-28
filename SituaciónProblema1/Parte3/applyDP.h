@@ -41,7 +41,7 @@ void applyDpToFiles(vector<pair<string, string>> files,
             }
         }
         cout << "En archivo: " << files[i].first;
-        cout << " el substring común más largo empieza en: " << start;
+        cout << " el substring comun mas largo empieza en: " << start;
         cout << " termina en: " << end + 1 << endl;
     }
 }
