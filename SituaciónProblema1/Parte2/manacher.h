@@ -1,9 +1,15 @@
-#ifndef MANACHER_H
-#define MANACHER_H
-
 #include <string>
 #include <vector>
 #include <sstream>
+
+/**
+ * Funcion que aplica el algoritmo manacher para emcontrar el 
+ * palindromo más largo en todos los archivos de transmision.
+ * @param const string s
+ * @return string, regresara un string con las posiciones 
+ * de incio y final del palindromo mas grande.
+ * Time complexity O(n)
+*/
 
 std::string longestPalindrome(const std::string& s) {
     // Transformar la cadena original en una con delimitadores entre cada caracter
@@ -53,5 +59,3 @@ std::string longestPalindrome(const std::string& s) {
     oss << (center_index - 1 - max_len) / 2 << " " << ((center_index - 1 - max_len) / 2) + max_len;
     return oss.str();
 }
-
-#endif // MANACHER_H
