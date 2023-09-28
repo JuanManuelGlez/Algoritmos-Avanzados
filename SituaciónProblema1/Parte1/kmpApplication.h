@@ -72,7 +72,7 @@ void kmpApplication(vector<string> transmissions,
                 if (j == target[y].length()) {
                     k++;
                     j = 0;
-                    cout << "True en la posición inicial: "
+                    cout << "(True) En la posicion inicial: "
                          << (i - target[y].length()) + 1
                          << " y final: " << i + 1;
                     cout << " en el archivo de transmission" << posFile << x + 1 << ".txt";
@@ -92,8 +92,8 @@ void kmpApplication(vector<string> transmissions,
                 }
             }
             if (k < 1) {
-                cout << "False el archivo transmission" << posFile << x + 1 << ".txt";
-                cout << " no contiene el código contenido en el archivo: " << mcodeFiles[y].substr(10) << endl;
+                cout << "(False) El archivo transmission" << posFile << x + 1 << ".txt";
+                cout << " no contiene el codigo contenido en el archivo: " << mcodeFiles[y].substr(10) << endl;
             }
         }
     }
