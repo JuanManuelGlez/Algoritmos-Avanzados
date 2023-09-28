@@ -110,15 +110,6 @@ int main(int argc, char *argv[]){
                 vector<int> lps(temp.size());
                 makeLpsTable(temp, lps);
                 lpsTables.push_back(lps);
-                // Si no es palíndromo, voltear string
-                // porque puede existir al revés el string
-                // en transmission
-                // if (!isPalindrome(0, temp.size() - 1, temp)) {
-                //     reverse(temp.begin(), temp.end());
-                //     mcodes.push_back(temp);
-                //     makeLpsTable(temp, lps);
-                //     lpsTables.push_back(lps);
-                // }
                 mCode.close();
             }
             else {

@@ -46,8 +46,8 @@ void makeLpsTable(string mcode, vector<int> &lpsTable){
  * @param vector<vector<int>> lps tables
  * @param vector<string> target mcode strings
  * @return void, solo imprimir resultado de matcheo y posiciones
- * Time complexity O(6*(n*m)) porque sabemos cantidad de files
- * sino, sería O(x*y(n*m))
+ * Time complexity O(6*(n+m)) porque sabemos cantidad de files
+ * sino, sería O(x*y(n+m))
  */
 void kmpApplication(vector<string> transmissions,
                     vector<vector<int>> lpsTables, vector<string> target, int posFile,
