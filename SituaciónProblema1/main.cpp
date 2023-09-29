@@ -16,7 +16,7 @@
  * Daniel Gutiérrez Gómez A01068056
  * Juan Manuel González Ascencio A00572003
  * Julio César Pérez Rodríguez A01705763
- * Creación 21/09/23, Modificación 23/09/23
+ * Creación 21/09/23, Modificación 28/09/23
  */
 
 #include "Parte1/mainKMP.h"
@@ -25,9 +25,18 @@
 
 
 int main(int argc, char *argv[]) {
+    cout<<endl;
+    cout<<"----- PARTE 1 ------"<<endl;
+
     mainKMP();
+
+    cout<<endl;
+    cout<<"----- PARTE 2 ------"<<endl;
 
     mainManacher();
 
+    cout<<endl;    
+    cout<<"----- PARTE 3 ------"<<endl;
+    
     mainDP();
 }
