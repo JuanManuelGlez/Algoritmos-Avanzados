@@ -13,10 +13,20 @@
  * al final, sabremos la posición inicial y final
  * dentro del archivo "transmissionY.txt" si es que
  * se encontró la cadena de "mcodeX.txt" en "transmissionY.txt"
+ * 
+ * Titulo: A|1_Actividad Integradora 1
+ * Integrantes: 
  * Daniel Gutiérrez Gómez A01068056
  * Juan Manuel González Ascencio A00572003
- * Julio César Pérez Rodríguez A01705763
- * Creación 21/09/23, Modificación 28/09/23
+ * Julio César Rodríguez Pérez A01705763
+ * 
+ * Materia: Análisis  y diseño de algoritmos avanzados 
+ * Maestra: Ramona Fuentes Valdéz
+ * 
+ * Fecha de entrega: 01 - 10 - 2023
+ * 
+ * Este archivo ejecuta las diferentes partes de la actividad
+ * las cuales son mainKMP, mainManacher y mainDP.
  */
 
 #include "Parte1/mainKMP.h"

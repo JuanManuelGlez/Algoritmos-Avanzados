@@ -1,3 +1,18 @@
+ /**
+ * Titulo: A|1_Actividad Integradora 1
+ * Integrantes: 
+ * Daniel Gutiérrez Gómez A01068056
+ * Juan Manuel González Ascencio A00572003
+ * Julio César Rodríguez Pérez A01705763
+ * 
+ * Materia: Análisis  y diseño de algoritmos avanzados 
+ * Maestra: Ramona Fuentes Valdéz
+ * 
+ * Fecha de entrega: 01 - 10 - 2023
+ * 
+ * Main el cual resuelve la parte 1 de la SP1
+ */
+
 #ifndef MAINKMP_H
 #define MAINKMP_H
 
