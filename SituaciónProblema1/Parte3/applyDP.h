@@ -51,7 +51,7 @@ void applyDpToFiles(vector<pair<string, string>> files,
         cout << "En archivo: " << files[i].first;
         cout << endl;
         cout << "Posicion inicial: " << start;
-        cout << " Posicion final: " << end + 1 << endl;
+        cout << " Posicion final: " << end << endl;
         cout << endl;
     }
 }
