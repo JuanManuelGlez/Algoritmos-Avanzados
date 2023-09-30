@@ -1,7 +1,13 @@
 .DS_Store
 *.DS_Store
 *.DS_Store
+
+# Ignore info.plist
 /info.plist
 /*/info.plist
 /*/*/info.plist
 /*/*/*/info.plist
+
+# Ignore executables
+/*/app
+/*/test
