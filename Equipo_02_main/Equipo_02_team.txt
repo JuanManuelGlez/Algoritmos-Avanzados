@@ -1,0 +1,16 @@
+Titulo: A|1_Actividad Integradora 1
+
+Equipo 02
+
+Integrantes: 
+Daniel Gutiérrez Gómez A01068056
+Juan Manuel González Ascencio A00572003
+Julio César Rodríguez Pérez A01705763
+
+Daniel Gutiérrez Gómez:
+Análisis, diseño e implementación parte 1 y parte 3
+de la actividad integradora 1.
+
+Julio César Rodríguez Pérez y Juan Manuel González Ascencio
+Análisis, diseño e implementación parte 2 
+de la actividad integradora 1.
