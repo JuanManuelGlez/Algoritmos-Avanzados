@@ -30,31 +30,25 @@ using namespace std;
  * mcode
  * Time complexity O(n) donde n es longitud de mcode
  */
-void makeLpsTable(string mcode, vector<int> &lpsTable)
-{
-  int j = 0;
+void makeLpsTable(string mcode, vector<int> &lpsTable) {
 
-  lpsTable[0] = 0;
+  int j = 0; // Inicializa un índice para comparar caracteres en el patrón
+  lpsTable[0] = 0; // Establece el primer valor de la tabla LPS como 0
 
   int i = 1;
-  while (i < mcode.length())
-  {
-    if (mcode[i] == mcode[j])
-    {
-      j++;
-      lpsTable[i] = j;
-      i++;
+  while (i < mcode.length()) { // Itera a través de los caracteres del patrón
+    if (mcode[i] == mcode[j]) {  // Si hay una coincidencia entre los caracteres
+      j++;                       // Incrementar el índice de comparación en el patrón
+      lpsTable[i] = j;           // Almacenar el valor del índice en la tabla LPS
+      i++;                       // Mover al siguiente carácter en el patrón
     }
-    else
-    {
-      if (j != 0)
-      {
+    else { 
+      if (j != 0) { // Retrocede en la tabla LPS para encontrar un posible prefijo sufijo más corto
         j = lpsTable[j - 1];
       }
-      else
-      {
-        lpsTable[i] = 0;
-        i++;
+      else {
+        lpsTable[i] = 0; // No hay prefijo sufijo común, establece el valor en la tabla LPS como 0
+        i++;             // Mueve al siguiente carácter en el patrón
       }
     }
   }
