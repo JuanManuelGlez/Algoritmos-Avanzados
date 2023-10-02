@@ -72,7 +72,7 @@ std::string longestPalindrome(const std::string& s) {
     // Extraer la subcadena palíndroma de la cadena original.
     //return s.substr((center_index - 1 - max_len) / 2, max_len);
     std::ostringstream oss;
-    oss << (center_index - 1 - max_len) / 2 << " " << ((center_index - 1 - max_len) / 2) + max_len;
+    oss << (center_index - 1 - max_len) / 2 + 1 << " " << ((center_index - 1 - max_len) / 2) + max_len;
     return oss.str();
 }
 
