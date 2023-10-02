@@ -1,18 +1,4 @@
 /**
- * Parte uno de Situación Problema
- * Programa que sirve para saber si existe
- * una cadena de strings en este caso son
- * archivos de texto llamados "mcodeX.txt"
- * de los cuales, se tiene que saber si se
- * encuentra esa cadena en otro archivo de
- * transmisión "transmissionY.txt". El mapeo
- * que se hizo, es una comparación de que por
- * cada cadena "mcodeX.txt", se debe de hacer la
- * comparación a los dos archivos de "transmissionY.txt"
- * esto, 3 veces ya que hay tres archivos de "mcodeX.txt"
- * al final, sabremos la posición inicial y final
- * dentro del archivo "transmissionY.txt" si es que
- * se encontró la cadena de "mcodeX.txt" en "transmissionY.txt"
  * 
  * Titulo: A|1_Actividad Integradora 1
  * Integrantes: 
