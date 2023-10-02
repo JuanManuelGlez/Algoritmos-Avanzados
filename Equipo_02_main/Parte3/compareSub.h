@@ -37,29 +37,45 @@ using namespace std;
  */
 vector<pair<int, int>> longestCommonSubstring(vector<vector<int>> tabulator,
                                               string subs1, string subs2) {
+    // Pares de índices posInicial posFinal
     vector<pair<int, int>> indices;
+    // Calcular índices en base al maxInt
     int maxInt = 0;
     int endIndex = 0;
+    // Creación de tabulador para realizar DP
     vector<int> lengthSubs(max(subs1.size(), subs2.size()));
+    // Para cada renglón y columna
     for (int row = 0; row < tabulator.size(); row++) {
         for (int col = 0; col < tabulator[0].size(); col++) {
+            // Columna y renglón 0 se llenan con 0
             if (col == 0 || row == 0) {
                 tabulator[row][col] = 0;
             }
             else {
+                // Si los caracteres son iguales en apuntadores - 1
                 if (subs1[col - 1] == subs2[row - 1]) {
+                   // El tabulador en los dos apuntadores
+                   // será el máximo de o la diagonal derecha anterior
+                   // o de una columna anterior + 1
                     tabulator[row][col] = max(tabulator[row - 1][col - 1] + 1,
-                     tabulator[row][col - 1] + 1);
+                    tabulator[row][col - 1] + 1);
                 }
+                // Si no son iguales, tabulador en apuntadores es 0
                 else {
                     tabulator[row][col] = 0;
                 }
+                // Si el maxInt es menor al tabulador en esa posición
+                // hay un nuevo máximo de longitud de subcadenas iguales
+                // endIndex es igual a la columna - 1
                 if (maxInt < tabulator[row][col]) {
                     maxInt = tabulator[row][col];
                     endIndex = col - 1;
                 }
             }
         }
+        // Si al terminar toda una columna el maxInt es mayor a 0
+        // Calcular posición inicial y final de substrings iguales
+        // meter en vector de pares nuevas posiciones
         if (maxInt > 0) {
             int startIndex = (endIndex - maxInt + 1) + 1;
             indices.emplace_back(startIndex, endIndex + 1);
