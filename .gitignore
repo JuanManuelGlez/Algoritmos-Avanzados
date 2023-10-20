@@ -2,11 +2,21 @@
 *.DS_Store
 *.DS_Store
 
+.vscode/*
+/vscode/*
+/.vscode
+vscode/*
+
 # Ignore info.plist
 /info.plist
 /*/info.plist
 /*/*/info.plist
 /*/*/*/info.plist
+
+# Ignore testeables
+/test.dSYM
+/*/test.dSYM
+/*/*/test.dSYM
 
 # Ignore executables
 /*/app
