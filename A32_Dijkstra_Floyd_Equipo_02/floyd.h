@@ -8,7 +8,6 @@
  * Modificación 19/10/23
 */
 
-#include <bits/stdc++.h>
 using namespace std;
 
 void Imprimir (vector<vector<int>> grafo, int n);
