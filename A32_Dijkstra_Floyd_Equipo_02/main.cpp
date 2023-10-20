@@ -4,7 +4,7 @@
  * @author Daniel Gutiérrez Gómez A01068056
  * @author Juan Manuel González Ascencio A00572003
  * @author Julio César Pérez Rodríguez A01705763
- * Creación 19/19/23, Modificación 19/19/23
+ * Creación 19/19/23, Modificación 20/19/23
  */
 
 #include "dijkstra.h"
@@ -20,16 +20,15 @@ int main(int argc, char *argv[]){
     std::cout << "Inserta el número de nodos: ";
     cin >> n;
 
-    vector<vector<int>> matriz(n, vector<int>(n));
-    // Leer los valores de la matriz
-    std::cout << "Introduce los valores de la matriz:" << std::endl;
+    vector<vector<int>> grafo(n, vector<int>(n));
+    // Leer los valores de la n
+    std::cout << "Introduce los valores del grafo:" << std::endl;
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-            std::cin >> matriz[i][j];
+            std::cin >> grafo[i][j];
         }
     }
-    applyDijkstra(matriz, distancias, nodosVisitados, matrizDistancias);
+    applyDijkstra(grafo, distancias, nodosVisitados, matrizDistancias);
     printDijkstra(matrizDistancias);
-    Floyd(matriz, n);
-    
+    Floyd(grafo, n);
 }
