@@ -6,11 +6,9 @@
  * Creación 19/19/23, Modificación 19/19/23
  */
 
-#include <iostream>
-#include <vector>
-#include <utility>
-#include <algorithm>
-#include <climits>
+#ifndef DIJKSTRA_H
+#define DIJKSTRA_H
+#include "libraries.h"
 using namespace std;
 
 /**
@@ -106,3 +104,4 @@ void printDijkstra(vector<vector<int>> matrizDistancias) {
         cout << endl;
     }
 }
+#endif // DIJKSTRA_H

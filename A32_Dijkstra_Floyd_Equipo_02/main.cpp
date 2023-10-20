@@ -7,12 +7,9 @@
  * Creación 19/19/23, Modificación 19/19/23
  */
 
-#include <iostream>
-#include <vector>
-#include <utility>
-#include <algorithm>
 #include "dijkstra.h"
 #include "floyd.h"
+#include "libraries.h"
 using namespace std;
 
 int main(int argc, char *argv[]){
