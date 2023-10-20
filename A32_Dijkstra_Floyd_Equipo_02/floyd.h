@@ -13,6 +13,12 @@ using namespace std;
 
 void Imprimir (vector<vector<int>> grafo, int n);
 
+/**
+ * @brief Se hace iteración de todos los nodos hasta visitar todos y encontrar el camino mínimo
+ * @param vector<vector<int>> grafo
+ * @param int n
+ * Time complexity O(n³)
+ */
 void Floyd(vector<vector<int>> grafo, int n){
 
     int i, j, k; //Variables para poder iterar por todos los vértieces del grafo
@@ -46,6 +52,12 @@ void Floyd(vector<vector<int>> grafo, int n){
     
 }
 
+/**
+ * @brief Se imprime la matriz de distancias
+ * @param vector<vector<int>> matriz
+ * @param int n
+ * Time complexity O(n²)
+ */
 void Imprimir(vector<vector<int>> grafo, int n){
 
     cout<<"---------------------"<<endl;
