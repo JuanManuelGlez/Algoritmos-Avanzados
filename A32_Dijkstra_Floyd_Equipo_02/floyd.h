@@ -30,13 +30,13 @@ void Floyd(vector<vector<int>> grafo, int n){
             for (int j=0; j<n; j++){
 
                 if (grafo[i][k] == -1){
-                    grafo[i][k] = 9999;
+                    grafo[i][k] = INT_MAX/2;
                 }
                 else if(grafo[k][j] == -1){
-                    grafo[k][j] = 9999;
+                    grafo[k][j] = INT_MAX/2;
                 }
                 else if(grafo[i][j] == -1){
-                    grafo[i][j] = 9999;
+                    grafo[i][j] = INT_MAX/2;
                 }
 
                 if (grafo[i][j] > (grafo[i][k] + grafo[k][j]) && grafo[i][k] != -1 && grafo[k][j] != -1){
