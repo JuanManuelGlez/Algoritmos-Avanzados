@@ -8,6 +8,7 @@
  */
 
 #include "dijkstra.h"
+#include "floyd.h"
 #include "libraries.h"
 using namespace std;
 
@@ -29,4 +30,6 @@ int main(int argc, char *argv[]){
     }
     applyDijkstra(matriz, distancias, nodosVisitados, matrizDistancias);
     printDijkstra(matrizDistancias);
+    Floyd(matriz, n);
+    
 }

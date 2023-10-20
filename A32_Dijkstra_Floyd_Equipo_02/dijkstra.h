@@ -1,10 +1,11 @@
 /**
  * Programa que implementa algoritmo de Dijkstra
- * @author Daniel Gutiérrez Gómez A01068056
- * @author Juan Manuel González Ascencio A00572003
- * @author Julio César Pérez Rodríguez A01705763
+    * @author Daniel Gutiérrez Gómez A01068056
+    * @author Juan Manuel González Ascencio A00572003
+    * @author Julio César Pérez Rodríguez A01705763
  * Creación 19/19/23, Modificación 19/19/23
  */
+
 #ifndef DIJKSTRA_H
 #define DIJKSTRA_H
 #include "libraries.h"
