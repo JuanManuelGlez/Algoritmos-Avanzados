@@ -5,14 +5,14 @@
  * @author Juan Manuel González Ascencio A00572003
  * @author Julio César Pérez Rodríguez A01705763
  * Creación 19/10/23 
- * Modificación 20/10/23
+ * Modificación 22/10/23
 */
 
 using namespace std;
 #ifndef FLOYD_H
 #define FLOYD_H
 #include "libraries.h"
-void Imprimir(vector<vector<int>> grafo, int n);
+void printFloyd(vector<vector<int>> grafo, int n);
 
 /**
  * @brief Se hace iteración de todos los nodos hasta visitar todos y encontrar el camino mínimo
@@ -20,14 +20,14 @@ void Imprimir(vector<vector<int>> grafo, int n);
  * @param int n
  * Time complexity O(n³)
  */
-void Floyd(vector<vector<int>> grafo, int n){
+void applyFloyd(vector<vector<int>> grafo, int n){
 
-    int i, j, k; //Variables para poder iterar por todos los vértieces del grafo
+    int i, j, k; //Variables para poder iterar por todos los vértices del grafo
 
     for (int k=0; k<n; k++){
-        //Se toman todos los vertices como origen uno por uno
+        //Se toman todos los vértices como origen uno por uno
         for (int i=0; i<n; i++){
-            //Se toman todos los vertices como destino para cada origen
+            //Se toman todos los vértices como destino para cada origen
             for (int j=0; j<n; j++){
 
                 if (grafo[i][k] == -1){
@@ -48,9 +48,7 @@ void Floyd(vector<vector<int>> grafo, int n){
         }
     }
 
-    Imprimir(grafo, n);
-
-    
+    printFloyd(grafo, n);
 }
 
 /**
@@ -59,7 +57,7 @@ void Floyd(vector<vector<int>> grafo, int n){
  * @param int n
  * Time complexity O(n²)
  */
-void Imprimir(vector<vector<int>> grafo, int n){
+void printFloyd(vector<vector<int>> grafo, int n) {
 
     cout<<"---------------------"<<endl;
     cout<<"Floyd"<<endl;

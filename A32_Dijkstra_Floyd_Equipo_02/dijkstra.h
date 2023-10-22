@@ -3,7 +3,7 @@
     * @author Daniel Gutiérrez Gómez A01068056
     * @author Juan Manuel González Ascencio A00572003
     * @author Julio César Pérez Rodríguez A01705763
- * Creación 19/19/23, Modificación 20/19/23
+ * Creación 19/19/23, Modificación 22/19/23
  */
 
 #ifndef DIJKSTRA_H
@@ -34,20 +34,20 @@ void dijkstraAlgorithm(vector<vector<int>> matriz, int nodo,
     processed[nodo] = true;
     while (visitados.size() < matriz.size()) {
         // Primer número es índice y segundo la distancia
-        pair<int, int> minNode(INT_MAX, INT_MAX);
+        pair<int, int> minNodo(INT_MAX, INT_MAX);
         // Encontrar el nuevo mínimo de distancia del nodo actual
         for (int i = 0; i < distancias.size(); i++) {
-            // Si el nodo no es diferente a la iteración en la que estamos
+            // Si el nodo es diferente a la iteración en la que estamos
             // si además es adyacente y si no ha sido visitado
-            if (distancias[i] < minNode.second &&
+            if (distancias[i] < minNodo.second &&
                 distancias[i] > 0 && !processed[i] && nodo != i) {
-                minNode.first = i;
-                minNode.second = distancias[i];
+                minNodo.first = i;
+                minNodo.second = distancias[i];
             }
         }
         // Marcar como visitado el nodo con menor distancia
-        visitados.push_back(minNode.first);
-        processed[minNode.first] = true;
+        visitados.push_back(minNodo.first);
+        processed[minNodo.first] = true;
 
         // Procesamiento de nodos adyacentes
         for (int col = 0; col < matriz.size(); col++) {
@@ -55,15 +55,15 @@ void dijkstraAlgorithm(vector<vector<int>> matriz, int nodo,
             // no es -1 entonces se actualiza con el costo actual más la distancia
             // al nodo mínimo
             // Actualizar vector de distancias la suma de las distancias
-            if (distancias[col] == -1 && matriz[minNode.first][col] != -1) {
-                distancias[col] = matriz[minNode.first][col] + distancias[minNode.first];
+            if (distancias[col] == -1 && matriz[minNodo.first][col] != -1) {
+                distancias[col] = matriz[minNodo.first][col] + distancias[minNodo.first];
             }
             // Si el nodo es mayor a 0 y la matriz en la posición del mínimo es mayor a 0
             // (existen adyacencias), calcular el mínimo entre la suma de la distancia actual
             // con la suma de la distancia del nodo mínimo y de la distancia en esa posición
             // Actualizar vector de distancias con el mínimo
-            else if (distancias[col] > 0 && matriz[minNode.first][col] > 0) {
-                int min = std::min(matriz[minNode.first][col] + distancias[minNode.first], distancias[col]);
+            else if (distancias[col] > 0 && matriz[minNodo.first][col] > 0) {
+                int min = std::min(matriz[minNodo.first][col] + distancias[minNodo.first], distancias[col]);
                 distancias[col] = min;
             }
         }
