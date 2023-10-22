@@ -3,7 +3,7 @@
     * @author Daniel Gutiérrez Gómez A01068056
     * @author Juan Manuel González Ascencio A00572003
     * @author Julio César Pérez Rodríguez A01705763
- * Creación 19/19/23, Modificación 19/19/23
+ * Creación 19/19/23, Modificación 20/19/23
  */
 
 #ifndef DIJKSTRA_H
@@ -16,11 +16,11 @@ using namespace std;
  * hasta visitar todos y encontrar el camino mínimo
  * en base a las distancias procesadas desde el nodo
  * principal hasta recorrer todos los nodos
- * @param vector<vector<int>> matriz
+ * @param vector<vector<int>> matriz simboliza el grafo dirigido
  * @param int nodo principal
  * @param vector<int> &distancias
  * @param vector<int> visitados
- * Time complexity O(n**2)
+ * Time complexity O(n²)
  */
 void dijkstraAlgorithm(vector<vector<int>> matriz, int nodo,
                         vector<int> &distancias,
@@ -74,7 +74,7 @@ void dijkstraAlgorithm(vector<vector<int>> matriz, int nodo,
  * @param vector<int> &distancias
  * @param vector<int> visitados
  * @param vector<vector<int>> &matrizDistancias
- * Time complexity O(n)
+ * Time complexity O(n³)
  */
 void applyDijkstra(vector<vector<int>> matriz,
                    vector<int> &distancias,
@@ -91,9 +91,13 @@ void applyDijkstra(vector<vector<int>> matriz,
  * @brief Impresión de matriz de distancias generadas
  * por recorrer todos los nodos
  * @param vector<vector<int>> matrizDistancias
- * Time complexity O(n**2)
+ * Time complexity O(n²)
  */
 void printDijkstra(vector<vector<int>> matrizDistancias) {
+
+    cout << "---------------------" << endl;
+    cout << "Dijkstra" << endl;
+    cout << "---------------------" << endl;
     for (int i = 0; i < matrizDistancias.size(); i++) {
         for (int j = 0; j < matrizDistancias.size(); j++) {
             if (i != j) {

@@ -5,12 +5,14 @@
  * @author Juan Manuel González Ascencio A00572003
  * @author Julio César Pérez Rodríguez A01705763
  * Creación 19/10/23 
- * Modificación 19/10/23
+ * Modificación 20/10/23
 */
 
 using namespace std;
-
-void Imprimir (vector<vector<int>> grafo, int n);
+#ifndef FLOYD_H
+#define FLOYD_H
+#include "libraries.h"
+void Imprimir(vector<vector<int>> grafo, int n);
 
 /**
  * @brief Se hace iteración de todos los nodos hasta visitar todos y encontrar el camino mínimo
@@ -71,3 +73,4 @@ void Imprimir(vector<vector<int>> grafo, int n){
     }
 }
 
+#endif // FLOYD_H
