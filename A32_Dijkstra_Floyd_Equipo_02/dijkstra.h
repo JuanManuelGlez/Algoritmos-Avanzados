@@ -25,11 +25,13 @@ using namespace std;
 void dijkstraAlgorithm(vector<vector<int>> matriz, int nodo,
                         vector<int> &distancias,
                         vector<int> visitados) {
+    vector<bool> processed(matriz.size(), false);
     // Procesamiento del primer nodo
     for (int i = 0; i < matriz.size(); i++) {
         distancias.push_back(matriz[nodo][i]);
     }
     visitados.push_back(nodo);
+    processed[nodo] = true;
     while (visitados.size() < matriz.size()) {
         // Primer número es índice y segundo la distancia
         pair<int, int> minNode(INT_MAX, INT_MAX);
@@ -38,13 +40,14 @@ void dijkstraAlgorithm(vector<vector<int>> matriz, int nodo,
             // Si el nodo no es diferente a la iteración en la que estamos
             // si además es adyacente y si no ha sido visitado
             if (distancias[i] < minNode.second &&
-                distancias[i] > 0 && visitados[i] != i && nodo != i) {
+                distancias[i] > 0 && !processed[i] && nodo != i) {
                 minNode.first = i;
                 minNode.second = distancias[i];
             }
         }
         // Marcar como visitado el nodo con menor distancia
         visitados.push_back(minNode.first);
+        processed[minNode.first] = true;
 
         // Procesamiento de nodos adyacentes
         for (int col = 0; col < matriz.size(); col++) {
