@@ -1,5 +1,5 @@
 # Algoritmos-Avanzados
-Repositorio que contiene algoritmos de los siguientes temas:
+Repository that contains the next topics:
 * Divide and conquer
   * Merge Sort
 * Greedy
@@ -7,6 +7,16 @@ Repositorio que contiene algoritmos de los siguientes temas:
 * Dynammic Programming
   * Coin Change problem
 * Backtracking
-  * Labyrinth
-   
-Hecho por @Chosno, @Guty y @Julio
+  * Rat in a maze
+* Branch and bound
+  * Rat in a maze
+* String manipulation
+  * Hash a string
+  * Suffix creation
+  * Matching substrings (KMP algorithm)
+  * Longest common palindrome (Manacher algorithm)
+  * Longest common substring (Dynammic programming)
+* Graphs
+  * Dijkstra (shortest path from one node to every node)
+  * Floyd Warshall (shortest paths of every node from one node to every node)
+Made by @Chosno, @Guty y @Julio
