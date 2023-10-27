@@ -19,6 +19,11 @@ vscode/*
 /*/test.dSYM
 /*/*/test.dSYM
 
+# Ignore testeables
+/app.dSYM
+/*/app.dSYM
+/*/*/app.dSYM
+
 # Ignore executables
 /*/app
 /*/test
