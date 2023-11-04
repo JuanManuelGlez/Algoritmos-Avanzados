@@ -61,11 +61,12 @@ std::map<int, std::vector<int>> graphColoring(std::vector<std::vector<int>> matr
                 if(!temp.first) {
                     bool foundNode = false;
                     int tempNode;
-                    std::cout<<temp.second << std::endl;
-                    for (int x = 0; x < colors[temp.second].size() || foundNode; x++) {
-                        tempNode = colors[temp.second][x];
-                        if (matrix[tempNode][node] != 0) {
-                            foundNode = true;
+                    if(temp.second < colors.size()) {
+                        for (int x = 0; x < colors[temp.second].size() && foundNode; x++) {
+                            tempNode = colors[temp.second][x];
+                            if (matrix[tempNode][node] != 0) {
+                                foundNode = true;
+                            }
                         }
                     }
                     if (!foundNode) {
