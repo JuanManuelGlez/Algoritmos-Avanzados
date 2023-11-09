@@ -6,7 +6,7 @@
  * @param &graph `std::vector<std::vector<int>>`
  * @param n ´int´ tamaño de grafo
  * @note `Time complexity - O(n²)`
- * @result Vector modificado con valores del usuario
+ * @result Matriz modificada con valores del usuario
  */
 void getGraph(int n, std::vector<std::vector<int>> &graph) {
     for (int i = 0; i < n; i++) {
