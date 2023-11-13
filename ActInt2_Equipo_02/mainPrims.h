@@ -50,7 +50,7 @@ void getSmallestEdge(std::vector<std::vector<int>> graph,
  * @param graph `std::vector<std::vector<int>>`
  * @returns `std::map<int, std::pair<int, int>>`
  */
-std::map<int, std::pair<int, int>> applyPrimsAlgorith(std::vector<std::vector<int>> graph) {
+std::map<int, std::pair<int, int>> applyPrimsAlgorithm(std::vector<std::vector<int>> graph) {
     // Vector para marcar los nodos visitados
     std::vector<bool> visited(graph.size(), false);
 
