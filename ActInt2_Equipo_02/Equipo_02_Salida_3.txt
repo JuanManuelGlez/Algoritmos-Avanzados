@@ -1,0 +1,15 @@
+----- Min Span Tree -----
+Forma de cablear colonias: 
+Cantidad de cable: 1
+(1, 5)
+Cantidad de cable: 21
+(4, 3)
+Cantidad de cable: 32
+(3, 2)
+Cantidad de cable necesitado para conectar colonias: 
+54
+----- Max Flow -----
+El flujo maximo del grafo es: 5
+----- Min Distance -----
+La distancia minima es: 354.193451
+Entre los puntos: (234, 576) y (392, 893)

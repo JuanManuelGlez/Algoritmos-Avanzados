@@ -2,10 +2,12 @@
 #include "askInput.h"
 #include "mainPrims.h"
 #include "printAnswers.h"
+#include "Flujo.h"
+#include "minDistance.h"
 
 int main(int charc, char *argv[]) {
     // Iterar por cada archivo de prueba
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 3; i++) {
         std::map<int, std::vector<std::vector<int>>> graphsMap;
         std::vector<std::pair<int, int>> coords;
         std::pair<int, int> newCoord;
@@ -34,15 +36,20 @@ int main(int charc, char *argv[]) {
          * tspAlgorithm()
          */
 
-        /**
-         * @note `To code Max flow`
-         * maxFlowAlgorithm()
-         */
+
+        //maxFlowAlgorithm();
+        int resMaxFlow = fordFulkerson(graphFlow, 0, graphFlow.size() - 1);
+
+       std::string resultFlow ="El flujo maximo del grafo es: " + std::to_string(resMaxFlow ) + "\n";
 
         /**
          * @note `To code Min distance points`
          * minDistancePoints()
          */
-        outputAnswers(i, resultPrims);
+        std::string minDist = minDistanceEuclidean(coords, coords.size(), newCoord);
+
+        outputAnswers(i, resultPrims, minDist, resultFlow);
+
+
     }
 }
