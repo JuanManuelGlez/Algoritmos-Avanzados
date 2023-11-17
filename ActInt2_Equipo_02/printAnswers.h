@@ -22,11 +22,15 @@ std::string printPrimsAnswer(std::map<int, std::pair<int, int>> MST) {
     return result;
 }
 
-void outputAnswers(int itr, std::string primsResult) {
+void outputAnswers(int itr, std::string primsResult, std::string maxFlow) {
     std::string outputTxt = "Equipo_02_Salida_" + std::to_string(itr + 1) + ".txt";
     std::ofstream outputFile(outputTxt);
+
     if (outputFile.is_open()) {
+        outputFile << "----- Min Span Tree -----\n";
         outputFile << primsResult;
+        outputFile << "----- Max Flow -----\n";
+        outputFile << maxFlow; 
             outputFile.close();
         std::cout << "Data was written to output.txt\n";
     }

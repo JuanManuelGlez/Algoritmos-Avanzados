@@ -2,6 +2,7 @@
 #include "askInput.h"
 #include "mainPrims.h"
 #include "printAnswers.h"
+#include "Flujo.h"
 
 int main(int charc, char *argv[]) {
     // Iterar por cada archivo de prueba
@@ -34,15 +35,16 @@ int main(int charc, char *argv[]) {
          * tspAlgorithm()
          */
 
-        /**
-         * @note `To code Max flow`
-         * maxFlowAlgorithm()
-         */
+
+         //maxFlowAlgorithm()
+        int resMaxFlow = fordFulkerson(graphFlow, 0, graphFlow.size() - 1);
+
+        std::string resultFlow ="El flujo maximo del grafo es: " + std::to_string(resMaxFlow);
 
         /**
          * @note `To code Min distance points`
          * minDistancePoints()
          */
-        outputAnswers(i, resultPrims);
+        outputAnswers(i, resultPrims, resultFlow);
     }
 }
