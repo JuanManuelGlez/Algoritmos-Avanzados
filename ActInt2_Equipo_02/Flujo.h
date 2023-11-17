@@ -1,6 +1,6 @@
 
 #include "libraries.h"
-const int V = 6;
+// const int V = 6;
  /**
   *Programa que implementa el algoritmo de Ford-Fulkerson para encontrar el flujo máximo en un grafo.  
  */
@@ -17,7 +17,7 @@ const int V = 6;
 */
 bool bfs(std::vector<std::vector<int>> &rGraph, int s, int t, std::vector<int> &parent, int n)
 {
-    std::vector<bool> visited(V, false);
+    std::vector<bool> visited(n, false);
  
 
     queue<int> q;
@@ -30,7 +30,7 @@ bool bfs(std::vector<std::vector<int>> &rGraph, int s, int t, std::vector<int> &
         int u = q.front();
         q.pop();
  
-        for (int v = 0; v < V; v++) {
+        for (int v = 0; v < n; v++) {
             if (visited[v] == false && rGraph[u][v] > 0) {
 
                 if (v == t) {
@@ -61,18 +61,18 @@ int fordFulkerson(std::vector<std::vector<int>> &graph, int s, int t)
     int u, v;
     
  
-    const int V = graph.size() - 1;
-    std::vector<std::vector<int>> rGraph;
+    const int V = graph.size();
+    std::vector<std::vector<int>> rGraph(graph.size(), std::vector<int>(graph.size()));
 
     for (u = 0; u < graph.size(); u++)
         for (v = 0; v < graph.size(); v++)
             rGraph[u][v] = graph[u][v];
- 
-    std::vector<int> parent; 
- 
+
+    std::vector<int> parent(graph.size());
+
     int max_flow = 0; 
 
-    while (bfs(rGraph, s, t, parent, graph.size())) {
+    while (bfs(rGraph, s, t, parent, V)) {
         int path_flow = INT_MAX;
         for (v = t; v != s; v = parent[v]) {
             u = parent[v];
