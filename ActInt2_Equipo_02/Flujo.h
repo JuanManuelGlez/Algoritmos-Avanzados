@@ -1,6 +1,6 @@
 
 #include "libraries.h"
-#define V 4
+#define V 6
  
  /**
   *Programa que implementa el algoritmo de Ford-Fulkerson para encontrar el flujo máximo en un grafo.  

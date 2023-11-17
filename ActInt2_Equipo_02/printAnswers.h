@@ -22,7 +22,7 @@ std::string printPrimsAnswer(std::map<int, std::pair<int, int>> MST) {
     return result;
 }
 
-void outputAnswers(int itr, std::string primsResult, std::string maxFlow, std::string minDistance) {
+void outputAnswers(int itr, std::string primsResult, std::string minDistance, std::string  maxFlow) {
     std::string outputTxt = "Equipo_02_Salida_" + std::to_string(itr + 1) + ".txt";
     std::ofstream outputFile(outputTxt);
 
