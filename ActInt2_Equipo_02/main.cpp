@@ -38,7 +38,7 @@ int main(int charc, char *argv[]) {
 
 
         //maxFlowAlgorithm();
-        int resMaxFlow = fordFulkerson(graphFlow, 0, sizeGraphs - 1);
+        int resMaxFlow = fordFulkerson(graphFlow, 0, graphFlow.size() - 1);
 
        std::string resultFlow ="El flujo maximo del grafo es: " + std::to_string(resMaxFlow ) + "\n";
 
