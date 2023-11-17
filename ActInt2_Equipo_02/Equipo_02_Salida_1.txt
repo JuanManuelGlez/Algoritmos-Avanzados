@@ -10,3 +10,6 @@ Cantidad de cable necesitado para conectar colonias:
 41
 ----- Max Flow -----
 El flujo maximo del grafo es: 78
+----- Min Distance -----
+La distancia minima es: 103.077644
+Entre los puntos: (300, 100) y (325, 200)

@@ -22,7 +22,7 @@ std::string printPrimsAnswer(std::map<int, std::pair<int, int>> MST) {
     return result;
 }
 
-void outputAnswers(int itr, std::string primsResult, std::string maxFlow) {
+void outputAnswers(int itr, std::string primsResult, std::string maxFlow, std::string minDistance) {
     std::string outputTxt = "Equipo_02_Salida_" + std::to_string(itr + 1) + ".txt";
     std::ofstream outputFile(outputTxt);
 
@@ -31,6 +31,8 @@ void outputAnswers(int itr, std::string primsResult, std::string maxFlow) {
         outputFile << primsResult;
         outputFile << "----- Max Flow -----\n";
         outputFile << maxFlow; 
+        outputFile << "----- Min Distance -----\n";
+        outputFile << minDistance;
             outputFile.close();
         std::cout << "Data was written to output.txt\n";
     }

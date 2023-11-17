@@ -3,6 +3,7 @@
 #include "mainPrims.h"
 #include "printAnswers.h"
 #include "Flujo.h"
+#include "minDistance.h"
 
 int main(int charc, char *argv[]) {
     // Iterar por cada archivo de prueba
@@ -39,12 +40,16 @@ int main(int charc, char *argv[]) {
          //maxFlowAlgorithm()
         int resMaxFlow = fordFulkerson(graphFlow, 0, graphFlow.size() - 1);
 
-        std::string resultFlow ="El flujo maximo del grafo es: " + std::to_string(resMaxFlow);
+        std::string resultFlow ="El flujo maximo del grafo es: " + std::to_string(resMaxFlow ) + "\n";
 
         /**
          * @note `To code Min distance points`
          * minDistancePoints()
          */
-        outputAnswers(i, resultPrims, resultFlow);
+        std::string minDist = minDistanceEuclidean(coords, coords.size(), newCoord);
+
+        outputAnswers(i, resultPrims, resultFlow, minDist);
+
+
     }
 }

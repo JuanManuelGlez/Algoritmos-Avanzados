@@ -3,13 +3,18 @@
 #define V 4
  
  /**
-  * @brief     
-  *Función que implementa el algoritmo de Ford-Fulkerson para encontrar el flujo máximo en un grafo.
+  *Programa que implementa el algoritmo de Ford-Fulkerson para encontrar el flujo máximo en un grafo.  
  */
 
 /**
- *  @brief 
- * la funcion bfs encuentra el camino de aumento en el grafo residual.
+ *  @brief la funcion bfs encuentra el camino de aumento en el grafo residual.
+ * @param rGraph es el grafo residual.
+ * @param s es el nodo fuente.
+ * @param t es el nodo sumidero.
+ * @param parent es un arreglo de padres.
+ * @param n es el numero de nodos.
+ * @note `Time Complexity - O(N^2)`
+ * @returns bool si existe un camino de aumento.
 */
 bool bfs(int rGraph[V][V], int s, int t, int parent[], int n)
 {
@@ -47,8 +52,12 @@ bool bfs(int rGraph[V][V], int s, int t, int parent[], int n)
 }
  
 /**
- * @brief 
- * Función que implementa el algoritmo de Ford-Fulkerson para encontrar el flujo máximo en un grafo.
+ * @brief Función que implementa el algoritmo de Ford-Fulkerson para encontrar el flujo máximo en un grafo.
+ * @param graph es el grafo.
+ * @param s es el nodo fuente.
+ * @param t es el nodo sumidero.
+ * @note `Time Complexity - O(N^2)`
+ * @returns int el flujo máximo.
 */
 int fordFulkerson(std::vector<std::vector<int>> graph, int s, int t)
 {
