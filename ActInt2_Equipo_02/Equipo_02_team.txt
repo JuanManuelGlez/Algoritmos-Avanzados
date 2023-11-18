@@ -1,0 +1,20 @@
+Titulo: A|_Actividad Integradora 2
+
+Equipo 02
+
+Integrantes: 
+Daniel Gutiérrez Gómez A01068056
+Juan Manuel González Ascencio A00572003
+Julio César Rodríguez Pérez A01705763
+
+Daniel Gutiérrez Gómez:
+Análisis, diseño e implementación problema 1 y parte 4
+de la actividad integradora 2.
+
+Julio César Rodríguez Pérez 
+Análisis, diseño e implementación parte 2 
+de la actividad integradora 2.
+
+Juan Manuel González Ascencio
+Análisis, diseño e implementación parte 3 y 4 
+de la actividad integradora 2.
