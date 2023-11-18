@@ -1,14 +1,23 @@
 ----- Min Span Tree -----
 Forma de cablear colonias: 
+Colonia 2 a Colonia 5
+Cantidad de cable: 21
 Colonia 2 a Colonia 6
 Cantidad de cable: 1
-Colonia 5 a Colonia 4
-Cantidad de cable: 21
+Colonia 4 a Colonia 1
+Cantidad de cable: 32
 Colonia 4 a Colonia 3
 Cantidad de cable: 32
+Colonia 5 a Colonia 4
+Cantidad de cable: 21
 
 Cantidad mínima de cable necesitado para conectar colonias: 
-54
+107
+
+------- TSP ------
+Ruta más corta: A F E D C B A 
+Costo de la ruta: 184
+Capacidad máxima de tráfico en esta ruta: 10
 
 ----- Max Flow -----
 El flujo maximo del grafo es: 5
