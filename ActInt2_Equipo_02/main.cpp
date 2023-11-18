@@ -42,7 +42,7 @@ int main(int charc, char *argv[]) {
         coords.pop_back();
 
         // Sección de Arbol con adyacencias más cortas (MST)
-        std::map<int, std::pair<int, int>> MST = applyPrimsAlgorithm(graphColonies);
+        std::map<std::pair<int, int>, int> MST = applyPrimsAlgorithm(graphColonies);
         std::string resultPrims = printPrimsAnswer(MST);
 
         // Algoritmo de TSP 

@@ -34,7 +34,7 @@ struct CompareFirstElement {
  * @returns void `Solo la modificación de mapa con resultados`
  */
 void getSmallestEdge(std::vector<std::vector<int>> graph,
-                     std::map<int, std::pair<int, int>> &edges) {
+                     std::map<std::pair<int, int>, int> &edges) {
     // Valor mayor para encontrar el mínimo de los valores
     int minimumEdge = INT_MAX;
     // Guardar par con posiciones de grafo
@@ -49,7 +49,7 @@ void getSmallestEdge(std::vector<std::vector<int>> graph,
         }
     }
     // Guardar en mapa con pesos los índices
-    edges[graph[indexes.first][indexes.second]] = indexes;
+    edges[indexes] = graph[indexes.first][indexes.second];
 }
 
 /**
@@ -58,7 +58,7 @@ void getSmallestEdge(std::vector<std::vector<int>> graph,
  * @param graph `std::vector<std::vector<int>> grafo`
  * @returns `std::map<int, std::pair<int, int>> hash map con conexiones`
  */
-std::map<int, std::pair<int, int>> applyPrimsAlgorithm(std::vector<std::vector<int>> graph) {
+std::map<std::pair<int, int>, int> applyPrimsAlgorithm(std::vector<std::vector<int>> graph) {
     // Vector para marcar los nodos visitados
     std::vector<bool> visited(graph.size(), false);
 
@@ -68,13 +68,13 @@ std::map<int, std::pair<int, int>> applyPrimsAlgorithm(std::vector<std::vector<i
     std::vector<std::pair<int, std::pair<int, int>>>, CompareFirstElement> minEdges;
 
     // Mapa que tiene las conexiones con las respuestas
-    std::map<int, std::pair<int, int>> edges;
+    std::map<std::pair<int, int>, int> edges;
 
     // Procesamiento de la primer conexión y la mínima en todo el grafo
     getSmallestEdge(graph, edges);
 
     // Obtener el primer elemento y marcarlo como visitado
-    int startVertex = edges.begin()->second.first;
+    int startVertex = (edges.begin()->first).first;
     visited[startVertex] = true;
 
     // Revisar adyacencias de ese primer nodo
@@ -97,7 +97,7 @@ std::map<int, std::pair<int, int>> applyPrimsAlgorithm(std::vector<std::vector<i
             // Marcar como visitado
             visited[nextVertex] = true;
             // Asignar un nuevo valor al mapa con nuevo mínimo
-            edges[minEdge.first] = {minEdge.second.first, minEdge.second.second};
+            edges[{minEdge.second.first, minEdge.second.second}] = minEdge.first;
             // Revisar adyacencias de ese nodo
             for (int col = 0; col < graph.size(); col++) {
                 if(graph[nextVertex][col] != 0 && !visited[col]) {

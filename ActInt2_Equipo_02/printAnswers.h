@@ -7,16 +7,18 @@
  * @param MST `std::map<int, std::pair<int, int>> Minimum spanning tree`
  * @returns `std::string - resultado`
  */
-std::string printPrimsAnswer(std::map<int, std::pair<int, int>> MST) {
+std::string printPrimsAnswer(std::map<std::pair<int, int>, int> MST) {
     std::string result;
     result += "Forma de cablear colonias: \n";
     int sumCable = 0;
-    for (std::map<int, std::pair<int, int>>::iterator ptr = MST.begin(); ptr != MST.end(); ptr++) {
-        result += "Colonia " + std::to_string(ptr->second.first + 1) + " a Colonia ";
-        result += std::to_string(ptr->second.second + 1) + "\n";
-        result += "Cantidad de cable: " + std::to_string(ptr->first) + "\n";
-        sumCable += ptr->first;
+
+    for (std::map<std::pair<int, int>, int>::iterator it = MST.begin(); it != MST.end(); ++it) {
+        result += "Colonia " + std::to_string((it->first).first + 1) + " a Colonia ";
+        result += std::to_string((it->first).second + 1) + "\n";
+        result += "Cantidad de cable: " + std::to_string(it->second) + "\n";
+        sumCable += it->second;
     }
+
     result += "\n";
     result += "Cantidad mínima de cable necesitado para conectar colonias: \n";
     result += std::to_string(sumCable) + "\n";
