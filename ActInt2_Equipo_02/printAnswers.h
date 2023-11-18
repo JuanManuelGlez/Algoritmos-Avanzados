@@ -12,12 +12,13 @@ std::string printPrimsAnswer(std::map<int, std::pair<int, int>> MST) {
     result += "Forma de cablear colonias: \n";
     int sumCable = 0;
     for (std::map<int, std::pair<int, int>>::iterator ptr = MST.begin(); ptr != MST.end(); ptr++) {
+        result += "Colonia " + std::to_string(ptr->second.first + 1) + " a Colonia ";
+        result += std::to_string(ptr->second.second + 1) + "\n";
         result += "Cantidad de cable: " + std::to_string(ptr->first) + "\n";
-        result += "(" + std::to_string(ptr->second.first) + ", ";
-        result += std::to_string(ptr->second.second) + ")\n";
         sumCable += ptr->first;
     }
-    result += "Cantidad de cable necesitado para conectar colonias: \n";
+    result += "\n";
+    result += "Cantidad mínima de cable necesitado para conectar colonias: \n";
     result += std::to_string(sumCable) + "\n";
     return result;
 }
@@ -29,8 +30,10 @@ void outputAnswers(int itr, std::string primsResult, std::string minDistance, st
     if (outputFile.is_open()) {
         outputFile << "----- Min Span Tree -----\n";
         outputFile << primsResult;
+        outputFile << "\n";
         outputFile << "----- Max Flow -----\n";
-        outputFile << maxFlow; 
+        outputFile << maxFlow;
+        outputFile << "\n";
         outputFile << "----- Min Distance -----\n";
         outputFile << minDistance;
             outputFile.close();

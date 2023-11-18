@@ -29,6 +29,8 @@ std::string minDistanceEuclidean (std::vector <std::pair<int, int>> points, int 
             min = dist;
         }
     }
-    std::string minDistance = "La distancia minima es: " + std::to_string(min) + "\n" + "Entre los puntos: (" + std::to_string(points[index].first) + ", " + std::to_string(points[index].second) + ") y (" + std::to_string(newCentral.first) + ", " + std::to_string(newCentral.second) + ")\n";
+    std::string minDistance = "La central más cercana a: (" + std::to_string(newCentral.first) + ", " + std::to_string(newCentral.second) + ")";
+    minDistance += " es (" + std::to_string(points[index].first) + ", " + std::to_string(points[index].first) + ")";
+    minDistance += " con una distancia de: " + std::to_string(min);
     return minDistance;
 }
