@@ -1,12 +1,15 @@
-
-#include "libraries.h"
-// const int V = 6;
- /**
-  *Programa que implementa el algoritmo de Ford-Fulkerson para encontrar el flujo máximo en un grafo.  
+/**
+ * Programa que resuelve tercer problema
+ * Algoritmo de Ford Fulkerson
+ * @author Daniel Gutiérrez Gómez A01068056
+ * @author Juan Manuel González Ascencio A00572003
+ * @author Julio César Pérez Rodríguez A01705763
+ * Creación 11/01/23, Modificación 11/17/23
  */
+#include "libraries.h"
 
 /**
- *  @brief la funcion bfs encuentra el camino de aumento en el grafo residual.
+ * @brief la funcion bfs encuentra el camino de aumento en el grafo residual.
  * @param rGraph es el grafo residual.
  * @param s es el nodo fuente.
  * @param t es el nodo sumidero.
@@ -15,11 +18,9 @@
  * @note `Time Complexity - O(N^2)`
  * @returns bool si existe un camino de aumento.
 */
-bool bfs(std::vector<std::vector<int>> &rGraph, int s, int t, std::vector<int> &parent, int n)
-{
-    std::vector<bool> visited(n, false);
- 
+bool bfs(std::vector<std::vector<int>> &rGraph, int s, int t, std::vector<int> &parent, int n) {
 
+    std::vector<bool> visited(n, false);
     queue<int> q;
     q.push(s);
     visited[s] = true;
@@ -56,8 +57,7 @@ bool bfs(std::vector<std::vector<int>> &rGraph, int s, int t, std::vector<int> &
  * @note `Time Complexity - O(N^2)`
  * @returns int el flujo máximo.
 */
-int fordFulkerson(std::vector<std::vector<int>> &graph, int s, int t)
-{  
+int fordFulkerson(std::vector<std::vector<int>> &graph, int s, int t) {
     int u, v;
     
  
@@ -89,7 +89,5 @@ int fordFulkerson(std::vector<std::vector<int>> &graph, int s, int t)
         
         max_flow += path_flow;
     }
- 
-{}
     return max_flow;
 }

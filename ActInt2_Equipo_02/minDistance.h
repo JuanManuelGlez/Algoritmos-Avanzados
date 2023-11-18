@@ -1,3 +1,12 @@
+/**
+ * Programa que resuelve cuarto problema
+ * Distancia euclidiana
+ * @author Daniel Gutiérrez Gómez A01068056
+ * @author Juan Manuel González Ascencio A00572003
+ * @author Julio César Pérez Rodríguez A01705763
+ * Creación 11/01/23, Modificación 11/17/23
+ */
+
 #include "libraries.h"
 
 /**

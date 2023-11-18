@@ -10,6 +10,11 @@ Cantidad de cable: 18
 Cantidad mínima de cable necesitado para conectar colonias: 
 41
 
+------- TSP ------
+Ruta más corta: A D C B A 
+Costo de la ruta: 73
+Capacidad máxima de tráfico en esta ruta: 168
+
 ----- Max Flow -----
 El flujo maximo del grafo es: 78
 

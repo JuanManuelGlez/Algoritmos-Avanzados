@@ -2,10 +2,10 @@
 #include "libraries.h"
 
 /**
- * @brief Función que imprime resultado del algoritmo de Prims
+ * @brief Función que regresa resultado del algoritmo de Prims
  * @note `Time Complexity - O(n)`
- * @param MST `std::map<int, std::pair<int, int>>`
- * @returns `void - Imprime resultado`
+ * @param MST `std::map<int, std::pair<int, int>> Minimum spanning tree`
+ * @returns `std::string - resultado`
  */
 std::string printPrimsAnswer(std::map<int, std::pair<int, int>> MST) {
     std::string result;
@@ -23,7 +23,17 @@ std::string printPrimsAnswer(std::map<int, std::pair<int, int>> MST) {
     return result;
 }
 
-void outputAnswers(int itr, std::string primsResult, std::string minDistance, std::string  maxFlow) {
+/**
+ * @brief Función que escribe resultado de todo el programa.
+ * @note `Time Complexity - O(n)`
+ * @param itr `int iteración archivo de entrada`
+ * @param primsResult `std::string resultado de Prims`
+ * @param minDist `std::string resultado minDistancia`
+ * @param resultTsp `std::string resultado TSP`
+ * @param maxFlow `std::string resultado Ford Fulkerson`
+ * @returns `void - Escribir resultado salida`
+ */
+void outputAnswers(int itr, std::string primsResult, std::string minDist, std::string resultTsp, std::string maxFlow) {
     std::string outputTxt = "Equipo_02_Salida_" + std::to_string(itr + 1) + ".txt";
     std::ofstream outputFile(outputTxt);
 
@@ -31,13 +41,16 @@ void outputAnswers(int itr, std::string primsResult, std::string minDistance, st
         outputFile << "----- Min Span Tree -----\n";
         outputFile << primsResult;
         outputFile << "\n";
+        outputFile << "------- TSP ------\n";
+        outputFile << resultTsp;
+        outputFile << "\n";
         outputFile << "----- Max Flow -----\n";
         outputFile << maxFlow;
         outputFile << "\n";
         outputFile << "----- Min Distance -----\n";
-        outputFile << minDistance;
-            outputFile.close();
-        std::cout << "Data was written to output.txt\n";
+        outputFile << minDist;
+        outputFile.close();
+        std::cout << "Equipo_02_Salida_" + std::to_string(itr + 1) + ".txt" + "\n";
     }
     else {
         std::cerr << "Error opening file\n";

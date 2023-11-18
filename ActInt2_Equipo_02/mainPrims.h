@@ -1,3 +1,11 @@
+/**
+ * Programa que resuelve primer problema
+ * Algoritmo de Prims
+ * @author Daniel Gutiérrez Gómez A01068056
+ * @author Juan Manuel González Ascencio A00572003
+ * @author Julio César Pérez Rodríguez A01705763
+ * Creación 10/20/23, Modificación 11/17/23
+ */
 #pragma once
 #include "libraries.h"
 
@@ -21,8 +29,8 @@ struct CompareFirstElement {
 /**
  * @brief Función que recupera la conexión con menor valor
  * @note `Time Complexity - O(n²)`
- * @param graph `std::vector<std::vector<int>>`
- * @param &edges `std::map<int, std::pair<int, int>>`
+ * @param graph `std::vector<std::vector<int>> grafo`
+ * @param &edges `std::map<int, std::pair<int, int>> conexiones del grafo`
  * @returns void `Solo la modificación de mapa con resultados`
  */
 void getSmallestEdge(std::vector<std::vector<int>> graph,
@@ -47,8 +55,8 @@ void getSmallestEdge(std::vector<std::vector<int>> graph,
 /**
  * @brief Función que aplica algoritmo de Prims
  * @note `Time Complexity - O(elog(e))`
- * @param graph `std::vector<std::vector<int>>`
- * @returns `std::map<int, std::pair<int, int>>`
+ * @param graph `std::vector<std::vector<int>> grafo`
+ * @returns `std::map<int, std::pair<int, int>> hash map con conexiones`
  */
 std::map<int, std::pair<int, int>> applyPrimsAlgorithm(std::vector<std::vector<int>> graph) {
     // Vector para marcar los nodos visitados
