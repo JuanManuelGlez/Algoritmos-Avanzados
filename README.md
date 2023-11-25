@@ -1,4 +1,4 @@
-# Algoritmos-Avanzados
+# Analysis and design of advanced algorithms
 Repository that contains the next topics:
 * Divide and conquer
   * [Merge Sort](https://github.com/JuanManuelGlez/Algoritmos-Avanzados/blob/main/A14_MergeSort_Dany/mergeSort.h)
@@ -26,3 +26,16 @@ Repository that contains the next topics:
 <div style="text-align: center;">
     Made by @Chosno, @Guty y @Julio
 </div>
+
+<details>
+    <summary>
+    ```md
+    > :memo: **Note:** `How to run code?`
+    ```
+    </summary>
+    ```md
+    * Open terminal navigate to the Activity's root folder
+    * Next up, type: `g++ -std=c++11 main.cpp -o app`
+    * After creating the executable, type `./app`
+    ```
+</detailes>
