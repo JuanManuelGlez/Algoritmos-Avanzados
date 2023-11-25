@@ -29,13 +29,17 @@ Repository that contains the next topics:
 
 <details>
     <summary>
-    ```md
-    > :memo: **Note:** `How to run code?`
-    ```
+    How to Run Code?
     </summary>
-    ```md
-    * Open terminal navigate to the Activity's root folder
-    * Next up, type: `g++ -std=c++11 main.cpp -o app`
-    * After creating the executable, type `./app`
-    ```
-</detailes>
+    <ul>
+        <li>
+            Open terminal navigate to the Activity's root folder
+        </li>
+        <li>
+            Next up, type: g++ -std=c++11 main.cpp -o app
+        </li>
+        <li>
+            After creating the executable, type ./app
+        </li>
+    </ul>
+</details>
